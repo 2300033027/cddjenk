@@ -1,19 +1,19 @@
-import java.util.Scanner;
-
 public class PrimeNumber {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        
-        System.out.print("Enter a number: ");
-        int num = sc.nextInt();
-        
+
+        if (args.length == 0) {
+            System.out.println("Please provide a number.");
+            return;
+        }
+
+        int n = Integer.parseInt(args[0]);
         boolean isPrime = true;
 
-        if (num <= 1) {
+        if (n <= 1) {
             isPrime = false;
         } else {
-            for (int i = 2; i <= Math.sqrt(num); i++) {
-                if (num % i == 0) {
+            for (int i = 2; i <= n / 2; i++) {
+                if (n % i == 0) {
                     isPrime = false;
                     break;
                 }
@@ -21,10 +21,8 @@ public class PrimeNumber {
         }
 
         if (isPrime)
-            System.out.println(num + " is a Prime Number");
+            System.out.println(n + " is a Prime Number");
         else
-            System.out.println(num + " is not a Prime Number");
-
-        sc.close();
+            System.out.println(n + " is not a Prime Number");
     }
 }
