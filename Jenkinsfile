@@ -21,7 +21,7 @@ pipeline {
 
         stage('Run') {
             steps {
-                bat "java PrimeNumber %NUMBER%"
+                bat "java PrimeNumber 7"
             }
         }
     }
