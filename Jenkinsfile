@@ -11,13 +11,13 @@ pipeline {
 
         stage('Compile') {
             steps {
-                sh 'javac PrimeNumber.java'
+                bat 'javac PrimeNumber.java'
             }
         }
 
         stage('Run') {
             steps {
-                sh 'java PrimeNumber'
+                bat 'java PrimeNumber'
             }
         }
     }
