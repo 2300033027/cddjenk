@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        jdk 'JAVA'   // Make sure this name matches Jenkins Global Tool Configuration
-    }
-
     stages {
 
         stage('Checkout Code') {
