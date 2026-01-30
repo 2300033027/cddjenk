@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    parameters {
+        string(name: 'NUMBER', defaultValue: '7', description: 'Enter number to check')
+    }
+
     stages {
 
         stage('Checkout Code') {
@@ -17,7 +21,7 @@ pipeline {
 
         stage('Run') {
             steps {
-                bat 'java PrimeNumber'
+                bat "java PrimeNumber %NUMBER%"
             }
         }
     }
